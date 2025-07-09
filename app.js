@@ -1,6 +1,6 @@
 let min = 1,
     max = 10,
-    winNum = 3,
+    winNum = randomNumber(min,max),
     guessLeft = 3;
 
 const minNum = document.querySelector('#min-num'),
@@ -60,7 +60,7 @@ guessBtn.addEventListener('click',function(){
                 // Clear the input
                 guessInput.value = '';
                 // Tell users they are wrong
-                setMessage(`${guess} is worong. You have ${guessLeft} Guesses left`);
+                setMessage(`${guess} is worong. You have ${guessLeft} Guesses left`,'red');
             }
     }
    
@@ -90,7 +90,10 @@ function gameOver(won,msg){
     guessBtn.className += 'paly-again';
 }
 
-
+// Generate Random Number
+function randomNumber(min,max){
+    console.log(Math.random()* (min-max+1)+min);
+}
 
 
 
